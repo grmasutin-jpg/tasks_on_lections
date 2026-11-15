@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #FAF8F5;
+    color: #181E29;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-math {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Tactile Mathematical Coordinate Grid */
+.bg-math-grid {
+  background-color: #FAF8F5;
+  background-image: 
+    linear-gradient(to right, rgba(24, 30, 41, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(24, 30, 41, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-math-subgrid {
+  background-image: radial-gradient(rgba(24, 30, 41, 0.08) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+@keyframes pulseGlowBlue {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(37, 99, 235, 0);
+  }
+}
+
+@keyframes pulseGlowOrange {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(234, 88, 12, 0);
+  }
+}
+
+.animate-pulse-blue {
+  animation: pulseGlowBlue 2.2s infinite;
+}
+
+.animate-pulse-orange {
+  animation: pulseGlowOrange 2.2s infinite;
+}
+
+@keyframes slideDownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideDownFade 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
